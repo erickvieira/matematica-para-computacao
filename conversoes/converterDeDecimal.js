@@ -4,15 +4,13 @@ function converterDeDecimal(decimal = 0, base = 2) {
       return decimal;
     }
 
-    let quociente = Math.floor(decimal / base);
-    const buffer = [decimal % base];
+    let quociente = decimal;
+    const buffer = [];
 
-    while (quociente >= base) {
-      quociente = Math.floor(quociente / base);
+    while (quociente > 0) {
       buffer.unshift(quociente % base);
+      quociente = Math.floor(quociente / base);
     }
-
-    buffer.push(Math.floor(quociente / base));
 
     return +buffer.join("");
   } else {
