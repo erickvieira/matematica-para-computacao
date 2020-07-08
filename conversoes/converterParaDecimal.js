@@ -21,7 +21,9 @@ function converterParaDecimal(numero = 0, base = 2) {
     F: 15,
   };
   if (numero > 0 || (base === 16 && numero.length > 0)) {
-    const algarismos = `${numero}`.split("").map((alg) => hex[alg]);
+    const algarismos = `${numero}`
+      .split("")
+      .map((alg) => hex[alg.toUpperCase()]);
     const pesos = algarismos.map((algarismo, i, { length }) => ({
       algarismo: +algarismo,
       peso: length - i - 1,
