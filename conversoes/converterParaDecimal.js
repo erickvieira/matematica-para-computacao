@@ -1,6 +1,9 @@
 function converterParaDecimal(numero = 0, base = 2) {
   if (![2, 8, 16].includes(base)) {
-    throw new Error("Please, use one of these bases: 2, 8 or 16");
+    throw new Error("Base não contemplada. Por favor, use 2, 8 ou 16.");
+  }
+  if (numero !== Math.floor(numero)) {
+    throw new Error("O parâmetro « numero » precisa ser Inteiro.");
   }
   const hex = {
     "0": 0,
