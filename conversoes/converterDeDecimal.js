@@ -12,7 +12,7 @@ function converterDeDecimal(decimal = 0, base = 2) {
       buffer.unshift(quociente % base);
     }
 
-    buffer.push(quociente);
+    buffer.push(Math.floor(quociente / base));
 
     return +buffer.join("");
   } else {
