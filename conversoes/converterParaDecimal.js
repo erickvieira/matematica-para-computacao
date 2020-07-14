@@ -5,6 +5,7 @@ function converterParaDecimal(numero = 0, base = 2) {
   if (numero !== Math.floor(numero)) {
     throw new Error("O parâmetro « numero » precisa ser Inteiro.");
   }
+
   const hex = {
     "0": 0,
     "1": 1,
@@ -23,14 +24,17 @@ function converterParaDecimal(numero = 0, base = 2) {
     E: 14,
     F: 15,
   };
+
   if (numero > 0 || (base === 16 && numero.length > 0)) {
     const algarismos = `${numero}`
       .split("")
       .map((alg) => hex[alg.toUpperCase()]);
+
     const pesos = algarismos.map((algarismo, i, { length }) => ({
       algarismo: +algarismo,
       peso: length - i - 1,
     }));
+
     return pesos.reduce(
       (acc, { algarismo, peso }) => acc + algarismo * Math.pow(base, peso),
       0

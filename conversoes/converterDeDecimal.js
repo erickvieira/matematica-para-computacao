@@ -5,7 +5,9 @@ function converterDeDecimal(decimal = 0, base = 2) {
   if (decimal !== Math.floor(decimal)) {
     throw new Error("O parâmetro « decimal » precisa ser Inteiro.");
   }
+
   const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
   if (decimal > 0) {
     if (decimal < base) {
       return decimal;
