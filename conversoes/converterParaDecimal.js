@@ -2,7 +2,7 @@ function converterParaDecimal(numero = 0, base = 2) {
   if (![2, 8, 16].includes(base)) {
     throw new Error("Base não contemplada. Por favor, use 2, 8 ou 16.");
   }
-  if (numero !== Math.floor(numero)) {
+  if (base !== 16 && numero !== Math.floor(numero)) {
     throw new Error("O parâmetro « numero » precisa ser Inteiro.");
   }
 
